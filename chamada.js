@@ -89,43 +89,43 @@ let chamadaDeAlunos = [
 // Fun~ção para mostrar o nome e as notas de todos os alunos
 function mostrarNomeNota(chamadaDeAlunos){
     chamadaDeAlunos.forEach(chamadaDeAlunos => { // Percorre todo o array e mostra os nomes e notas
-        console.log("Nome: " + chamadaDeAlunos.nome)
-        console.log("Nota 1: " + chamadaDeAlunos.materias[0].nota)
-        console.log("Nota 2: " + chamadaDeAlunos.materias[1].nota)
+        console.log("Nome: " + chamadaDeAlunos.nome) // Aparece o nome do aluno
+        console.log("Nota 1: " + chamadaDeAlunos.materias[0].nota) // Aparece a nota na primeira matéria 
+        console.log("Nota 2: " + chamadaDeAlunos.materias[1].nota) // Aparece a nota na segunda matéria
     });
     
 }
-mostrarNomeNota(chamadaDeAlunos)
+mostrarNomeNota(chamadaDeAlunos) // Chamada da função
 
 console.log("------------------------------------")
 
 // Função de aprovados que irá ver os alunos que tem nota maior que 6 e presença de matérias maior que 75
 function aprovadosReprovados(chamadaDeAlunos){
-    for (let i = 0; i < chamadaDeAlunos.length; i++) {
-        if(chamadaDeAlunos.nota <= 6 && chamadaDeAlunos.presenca <= 75){
-            console.log(chamadaDeAlunos[i].nome + " Passou")
+    chamadaDeAlunos.forEach(chamadaDeAlunos => {
+        if(chamadaDeAlunos.nota <= 6 && chamadaDeAlunos.presenca <= 75){ // Verificação das notas e presenças
+            console.log(chamadaDeAlunos.nome + " Não Passou") // Caso alguma validação seja verdadeira
         }
-        console.log(chamadaDeAlunos[i].nome + " Não Passou")
-    }
+        console.log(chamadaDeAlunos.nome + " Passou") // Caso as duas validações sejam falsas
+    });
     
 }
-aprovadosReprovados(chamadaDeAlunos)
+aprovadosReprovados(chamadaDeAlunos) // Chamada da função
 
 console.log("------------------------------------")
 
 // Função que mostra os alunos com menor nota
 function menorNota(chamadaDeAlunos){
-    chamadaDeAlunos.forEach(chamadaDeAlunos => {
-        console.log("Nota: " + chamadaDeAlunos.materias.Math.min(nota))
+    chamadaDeAlunos.forEach(chamadaDeAlunos => { // Para percorrer toda a array
+        console.log("Nota: " + chamadaDeAlunos.materias.Math.min(nota)) // Mostra a menor nota entre os alunos
     })
 }
-menorNota(chamadaDeAlunos)
+menorNota(chamadaDeAlunos) // Chamada da função
 
 
 // Função que mostra os alunos com maior nota
 function maiorNota(chamadaDeAlunos){
-    chamadaDeAlunos.forEach(chamadaDeAlunos => {
-        console.log("Nota: " + chamadaDeAlunos.materias.Math.max(nota))
+    chamadaDeAlunos.forEach(chamadaDeAlunos => { // Para percorrer toda a array
+        console.log("Nota: " + chamadaDeAlunos.materias.Math.max(nota))  // Mostra a maior nota entre os alunos
     })
 }
-maiorNota(chamadaDeAlunos)
+maiorNota(chamadaDeAlunos) // Chamada da função
